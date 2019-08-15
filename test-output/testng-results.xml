@@ -4,36 +4,90 @@
     <line>
       <![CDATA[Response {
     "City": "Everett",
-    "Temperature": "20.47 Degree celsius",
-    "Humidity": "72 Percent",
-    "WeatherDescription": "overcast clouds",
+    "Temperature": "20.19 Degree celsius",
+    "Humidity": "68 Percent",
+    "WeatherDescription": "scattered clouds",
     "WindSpeed": "2.6 Km per hour",
-    "WindDirectionDegree": "350 Degree"
+    "WindDirectionDegree": "330 Degree"
 }]]>
     </line>
     <line>
-      <![CDATA[We get status code 200]]>
+      <![CDATA[Status code 200]]>
+    </line>
+    <line>
+      <![CDATA[Status code 200 is verified]]>
+    </line>
+    <line>
+      <![CDATA[Status line HTTP/1.1 200 OK is verified]]>
+    </line>
+    <line>
+      <![CDATA[Content Type application/json is verified]]>
+    </line>
+    <line>
+      <![CDATA[Server nginx is verified]]>
+    </line>
+    <line>
+      <![CDATA[City Everett is verified]]>
+    </line>
+    <line>
+      <![CDATA[Temperature 20.19 Degree celsius is verified]]>
+    </line>
+    <line>
+      <![CDATA[Humidity 68 Percent is verified]]>
+    </line>
+    <line>
+      <![CDATA[WindSpeed 2.6 Km per hour is verified]]>
+    </line>
+    <line>
+      <![CDATA[WindDirectionDegree 330 Degree is verified]]>
     </line>
   </reporter-output>
-  <suite started-at="2019-08-15T03:59:03Z" name="Default Suite" finished-at="2019-08-15T03:59:06Z" duration-ms="2553">
+  <suite started-at="2019-08-15T04:17:41Z" name="Default Suite" finished-at="2019-08-15T04:17:44Z" duration-ms="2305">
     <groups>
     </groups>
-    <test started-at="2019-08-15T03:59:03Z" name="apiWeatherTest" finished-at="2019-08-15T03:59:06Z" duration-ms="2553">
+    <test started-at="2019-08-15T04:17:41Z" name="apiWeatherTest" finished-at="2019-08-15T04:17:44Z" duration-ms="2305">
       <class name="ApiWeatherTest">
-        <test-method signature="testApiWeather()[pri:0, instance:ApiWeatherTest@3c130745]" started-at="2019-08-15T03:59:03Z" name="testApiWeather" finished-at="2019-08-15T03:59:06Z" duration-ms="2521" status="PASS">
+        <test-method signature="testApiWeather()[pri:0, instance:ApiWeatherTest@cd3fee8]" started-at="2019-08-15T04:17:41Z" name="testApiWeather" finished-at="2019-08-15T04:17:44Z" duration-ms="2285" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Response {
     "City": "Everett",
-    "Temperature": "20.47 Degree celsius",
-    "Humidity": "72 Percent",
-    "WeatherDescription": "overcast clouds",
+    "Temperature": "20.19 Degree celsius",
+    "Humidity": "68 Percent",
+    "WeatherDescription": "scattered clouds",
     "WindSpeed": "2.6 Km per hour",
-    "WindDirectionDegree": "350 Degree"
+    "WindDirectionDegree": "330 Degree"
 }]]>
             </line>
             <line>
-              <![CDATA[We get status code 200]]>
+              <![CDATA[Status code 200]]>
+            </line>
+            <line>
+              <![CDATA[Status code 200 is verified]]>
+            </line>
+            <line>
+              <![CDATA[Status line HTTP/1.1 200 OK is verified]]>
+            </line>
+            <line>
+              <![CDATA[Content Type application/json is verified]]>
+            </line>
+            <line>
+              <![CDATA[Server nginx is verified]]>
+            </line>
+            <line>
+              <![CDATA[City Everett is verified]]>
+            </line>
+            <line>
+              <![CDATA[Temperature 20.19 Degree celsius is verified]]>
+            </line>
+            <line>
+              <![CDATA[Humidity 68 Percent is verified]]>
+            </line>
+            <line>
+              <![CDATA[WindSpeed 2.6 Km per hour is verified]]>
+            </line>
+            <line>
+              <![CDATA[WindDirectionDegree 330 Degree is verified]]>
             </line>
           </reporter-output>
         </test-method> <!-- testApiWeather -->

@@ -26,18 +26,14 @@ public class ApiWeatherTest {
         Reporter.log("Response " + responseBody);
 
         int statusCode = response.getStatusCode();
-        Reporter.log("We get status code " + statusCode);
-
-//        log.info("Status code " + statusCode);
+        Reporter.log("Status code " + statusCode);
 
         Assert.assertEquals(200, statusCode);
-//        log.info("Status code is verified");
+        Reporter.log("Status code " + statusCode + " is verified");
 
         String statusLine = response.statusLine();
-//        log.info(statusLine);
-
         Assert.assertEquals("HTTP/1.1 200 OK", statusLine);
-//        log.info("Status line is verified");
+        Reporter.log("Status line " + statusLine + " is verified");
 
         Headers headers = response.headers();
 
@@ -48,40 +44,34 @@ public class ApiWeatherTest {
         }
 
         String contentType = response.header("Content-Type");
-
         Assert.assertEquals("application/json", contentType);
+        Reporter.log("Content Type " + contentType + " is verified");
 
         String server = response.header("Server");
-
         Assert.assertEquals("nginx", server);
+        Reporter.log("Server " + server + " is verified");
 
         JsonPath jsonObject = response.jsonPath();
 
         String city = jsonObject.get("City");
-//        log.info(city);
         Assert.assertEquals("Everett", city);
-//        log.info("City is verified");
+        Reporter.log("City " + city + " is verified");
 
         String temperature = jsonObject.get("Temperature");
-//        log.info(temperature);
         Assert.assertTrue(temperature.contains("Degree celsius"));
-//        log.info("Temperature is verified");
+        Reporter.log("Temperature " + temperature + " is verified");
 
         String humidity = jsonObject.get("Humidity");
-//        log.info(humidity);
         Assert.assertTrue(humidity.contains("Percent"));
-//        log.info("Humidity is verified");
+        Reporter.log("Humidity " + humidity + " is verified");
 
         String windSpeed = jsonObject.get("WindSpeed");
-//        log.info(windSpeed);
         Assert.assertTrue(windSpeed.contains("per hour"));
-//        log.info("WindSpeed is verified");
+        Reporter.log("WindSpeed " + windSpeed + " is verified");
 
         String windDirectionDegree = jsonObject.get("WindDirectionDegree");
-//        log.info(windDirectionDegree);
         Assert.assertTrue(windDirectionDegree.contains("Degree"));
-//        log.info("WindDirectionDegree is verified");
-
+        Reporter.log("WindDirectionDegree " + windDirectionDegree + " is verified");
 
     }
 
