@@ -2,9 +2,14 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.logging.Logger;
+
 public class ApiWeatherTest {
+
+    private static Logger log = Logger.getLogger(ApiWeatherTest.class.getName());
 
     @Test
     public void testApiWeather() {
@@ -17,11 +22,20 @@ public class ApiWeatherTest {
 
         String responseBody = response.getBody().asString();
 
-        System.out.println(responseBody);
+        log.info(responseBody);
 
         int statusCode = response.getStatusCode();
 
-        System.out.println(statusCode);
+        log.info("Status code " + statusCode);
+
+        Assert.assertEquals(200, statusCode);
+        log.info("Status code is verified");
+
+        String statusLine = response.statusLine();
+        log.info(statusLine);
+
+        Assert.assertEquals("HTTP/1.1 200 OK", statusLine);
+        log.info("Status line is verified");
 
 
 
