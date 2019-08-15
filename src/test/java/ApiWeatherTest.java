@@ -1,4 +1,6 @@
 import io.restassured.RestAssured;
+import io.restassured.http.Header;
+import io.restassured.http.Headers;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -36,6 +38,22 @@ public class ApiWeatherTest {
 
         Assert.assertEquals("HTTP/1.1 200 OK", statusLine);
         log.info("Status line is verified");
+
+        Headers headers = response.headers();
+
+        for (Header header: headers) {
+
+            System.out.println("Key " + header.getName() + " Value " + header.getValue());
+
+        }
+
+        String contentType = response.header("Content-Type");
+
+        Assert.assertEquals("application/json", contentType);
+
+        String server = response.header("Server");
+
+        Assert.assertEquals("nginx", server);
 
 
 
