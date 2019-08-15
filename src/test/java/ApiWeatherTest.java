@@ -2,6 +2,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -54,6 +55,39 @@ public class ApiWeatherTest {
         String server = response.header("Server");
 
         Assert.assertEquals("nginx", server);
+
+        JsonPath jsonObject = response.jsonPath();
+
+        String city = jsonObject.get("City");
+        log.info(city);
+        Assert.assertEquals("Everett", city);
+        log.info("City is verified");
+
+        String temperature = jsonObject.get("Temperature");
+        log.info(temperature);
+        Assert.assertTrue(temperature.contains("Degree celsius"));
+        log.info("Temperature is verified");
+
+        String humidity = jsonObject.get("Humidity");
+        log.info(humidity);
+        Assert.assertTrue(humidity.contains("Percent"));
+        log.info("Humidity is verified");
+
+        String windSpeed = jsonObject.get("WindSpeed");
+        log.info(windSpeed);
+        Assert.assertTrue(windSpeed.contains("per hour"));
+        log.info("WindSpeed is verified");
+
+        String windDirectionDegree = jsonObject.get("WindDirectionDegree");
+        log.info(windDirectionDegree);
+        Assert.assertTrue(windDirectionDegree.contains("Degree"));
+        log.info("WindDirectionDegree is verified");
+
+
+
+
+
+
 
 
 
